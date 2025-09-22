@@ -90,14 +90,14 @@ Adafruit_ADS1115 ads; // For both tubes, assuming default address 0x48
 // Values updated with your specific probe measurements.
 
 // Probe A Measurements
-const float R1A = 1000000.0; //  1002000.0 = 1MΩ resistor - Measure between pin 3 of the tube socket and the tip of the red banana plug.
-const float R2A = 100.0;      // 100Ω resistor - Measure directly between the tips of the red and black banana plugs.
-const float measured_R_value_A = 1.0; // 1Ω shunt resistor - Measure directly between the tips of the white and black banana plugs.
+const float R1A = 1002300.0; //  1002300.0 = 1MΩ resistor - Measure between pin 3 of the tube socket and the tip of the red banana plug.
+const float R2A = 100.2;      // 100.2Ω resistor - Measure directly between the tips of the red and black banana plugs.
+const float measured_R_value_A = 1.1; // 1.1Ω shunt resistor - Measure directly between the tips of the white and black banana plugs.
 
 // Probe B Measurements
-const float R1B = 1000000.0; // 1MΩ resistor - Measure between pin 3 of the tube socket and the tip of the red banana plug.
-const float R2B = 100.0;      // 100Ω resistor - Measure directly between the tips of the red and black banana plugs.
-const float measured_R_value_B = 1.0; // 1Ω shunt resistor - Measure directly between the tips of the white and black banana plugs.
+const float R1B = 1002800.0; // 1002800.0 resistor - Measure between pin 3 of the tube socket and the tip of the red banana plug.
+const float R2B = 100.3;      // 100.3 Ω resistor - Measure directly between the tips of the red and black banana plugs.
+const float measured_R_value_B = 1.1; // 1.1 Ω shunt resistor - Measure directly between the tips of the white and black banana plugs.
 
 // Corrected scale factor calculation
 const float plateVoltageScale_A = ((R1A + R2A) / R2A) / 1000.0;
@@ -158,25 +158,31 @@ struct TUBE {
 // Array of supported tubes.
 TUBE tubes[] = {
   {"6L6GC", 30, true}, {"EL34", 25, true},  
-  {"6V6", 12, true}, {"6V6GT", 14, true},
-  {"KT88", 42, true}, {"KT66", 25, true},
-  {"6L6GB", 19, true}, {"6L6WGC", 26, true}, 
-  {"6550", 35, true},  {"EL84", 12, true}, 
-  {"5881", 23, true}, {"5881WXT", 26, true}, 
+  // {"6V6", 12, true}, {"6V6GT", 14, true},
+  // {"KT88", 42, true}, {"KT66", 25, true},
+  // {"6L6GB", 19, true}, {"6L6WGC", 26, true}, 
+  // {"6550", 35, true},  {"EL84", 12, true}, 
+  // {"5881", 23, true}, {"5881WXT", 26, true}, 
   {"RAW", 100, false}
 };
 
 #define arr_len(x) (sizeof(x) / sizeof(*x))
 
 // Function prototypes.
-int processTubeMenu();
 void displayTypes();
 void doBias();
 boolean buttonClicked();
-boolean debouncedButtonPressed(int inputPin);
+boolean checkButton(int buttonPin, int &lastState); // New function added
+int processTubeMenu();                             // This function was missing a prototype
 void displaySplashScreen();
 void displayBiasScreenLayout();
 void displayOverVoltageWarning(String probe);
+
+// New variables for non-blocking debounce
+unsigned long lastDebounceTime = 0;
+const unsigned long debounceDelay = 50; // 50ms debounce time
+int lastButtonStateL = HIGH;
+int lastButtonStateR = HIGH;
 
 
 // Setup function - runs once at startup.
@@ -263,7 +269,6 @@ void loop() {
       Serial.println("\n--- Exiting Bias Mode, returning to menu ---");
     }
   }
-  delay(10);
 }
 
 void doBias() {
@@ -379,28 +384,7 @@ void doBias() {
   FirstBiasRun = false;
 }
 
-int processTubeMenu() {
-  int result = 0;
-  if (debouncedButtonPressed(guiLClick) == true && movedMenu == false) {
-    movedMenu = true;
-    curMenuItem--;
-    if (curMenuItem < 0) { curMenuItem = arr_len(tubes) - 1; }
-    result = -1;
-  } else if (debouncedButtonPressed(guiRClick) == true && movedMenu == false) {
-    movedMenu = true;
-    curMenuItem++;
-    if (curMenuItem >= arr_len(tubes)) { curMenuItem = 0; }
-    result = 2;
-  } else if (debouncedButtonPressed(guiRClick) == false && debouncedButtonPressed(guiLClick) == false) {
-    movedMenu = false;
-  }
-
-  if (buttonClicked()) {
-    result = 1;
-  }
-  return result;
-}
-
+ 
 void displayTypes() {
   tft.fillScreen(ST7735_BLACK);
   tft.setCursor(17, 0);
@@ -536,12 +520,42 @@ boolean buttonClicked() {
   return false;
 }
 
-boolean debouncedButtonPressed(int inputPin) {
-  if (digitalRead(inputPin) == LOW) {
-    delay(50); // Blocking debounce delay
-    if (digitalRead(inputPin) == LOW) {
-      return true;
+boolean checkButton(int buttonPin, int &lastState) {
+  boolean pressed = false;
+  int reading = digitalRead(buttonPin);
+
+  if (reading != lastState) {
+    lastDebounceTime = millis();
+  }
+
+  if ((millis() - lastDebounceTime) > debounceDelay) {
+    if (reading == LOW) {
+      pressed = true;
     }
   }
-  return false;
+  lastState = reading;
+  return pressed;
+}
+
+int processTubeMenu() {
+  int result = 0;
+  // Use the new non-blocking check
+  if (checkButton(guiLClick, lastButtonStateL)) {
+    curMenuItem--;
+    if (curMenuItem < 0) { curMenuItem = arr_len(tubes) - 1; }
+    result = -1;
+    // Add a small delay here to prevent one long press from cycling too fast
+    delay(150); 
+  } else if (checkButton(guiRClick, lastButtonStateR)) {
+    curMenuItem++;
+    if (curMenuItem >= arr_len(tubes)) { curMenuItem = 0; }
+    result = 2;
+    // Add a small delay here as well
+    delay(150);
+  }
+
+  if (buttonClicked()) { // Your existing click function is fine
+    result = 1;
+  }
+  return result;
 }
