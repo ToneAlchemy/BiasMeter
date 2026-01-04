@@ -88,7 +88,7 @@ You can export the `.STL` files directly from the link above. Standard PLA or PE
 
 ### Arduino Nano Pinout 
 
-![Arduino Nano Pinout](nano_pinout.jpg)
+![Arduino Nano Pinout](https://github.com/ToneAlchemists/BiasMeter/blob/25a091382b33c8da140eac9d3a7a2a432e6024f1/IMAGES/nano_pinout.jpg)
 
 ## Powering the Device (Crucial Safety Info)
 
