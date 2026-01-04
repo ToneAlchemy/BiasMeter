@@ -59,8 +59,6 @@ This BOM covers the main components for the bias meter itself. It does not inclu
 This work, "'Bias Meter'" by Tone Alchemy, is licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
 This project is an adaptation of:
-* "'Dual Channel Arduino Bias Tester beta 14'" by 3DBeerGoggles (CC BY 4.0)
+* "'Dual Channel Arduino Bias Tester beta 14'" by Kiel Lydestad (3DBeerGoggles). (CC BY 4.0)
 * "'ArduinoBiasMeter'" by John Wagner (CC BY 4.0)
-
-Portions of the code in v3 (Bias Meter) were developed with the assistance of Google Gemini and xAI's Grok.
 ```
