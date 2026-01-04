@@ -50,7 +50,7 @@ Unlike previous iterations that required hard-coding values, V11.3 is a fully st
 
 | Quantity | Component                     | Description                                      |
 | :------- | :---------------------------- | :----------------------------------------------- |
-| 1        | Arduino Nano                  | Microcontroller board (ATmega328P)               |
+| 1        | Arduino Nano   (Recommended: USB-C Version)               | Microcontroller board (ATmega328P)               |
 | 1        | Adafruit ST7735 1.8" TFT      | 160x128 Color TFT Display (SPI)                  |
 | 1        | ADS1115 16-Bit ADC Module     | High-precision 4-channel ADC (I2C)               |
 | 3        | Tactile Push Buttons          | Menu navigation (Left, Right, Center/Select)     |
