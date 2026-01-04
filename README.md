@@ -122,7 +122,7 @@ Correctly powering the Arduino Nano is critical to prevent damage to your comput
 ### 1. Recommended: Separate USB Power Adapter
 The safest way to power this device during use is with a dedicated USB wall charger (like a standard phone charger).
 * **Specs:** 5V Output, at least 500mA (0.5A).
-* **Connector:** Mini-USB (for Nano).
+* **Connector:** Mini-USB or USB-C (for Nano). Recommend get USB-C Arduino Nano
 * **⚠️ IMPORTANT - 2-Prong Only:** You must use a charger that has only **2 prongs** (ungrounded).
     * **Why?** Tube amplifiers are grounded to Earth. If you use a grounded (3-prong) power adapter for the Arduino, you may create a **Ground Loop**. This can introduce noise, cause erratic readings, or in worst-case scenarios, short high voltage to ground through your low-voltage electronics. A 2-prong adapter is "floating," which isolates the meter from Earth ground.
 
