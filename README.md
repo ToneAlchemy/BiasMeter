@@ -64,9 +64,27 @@ A custom enclosure has been designed to house the Arduino Nano, Display, and But
 
 * **Design Platform:** TinkerCAD
 * **Download Link:** [Bias Meter Enclosure V11 Files](https://www.tinkercad.com/things/gKRXVebJSTF/edit?sharecode=gUTg7qwfboPwH2RXnympp6uQYQx4FWwdrr1dFZcTKMg)
-
+* **Download Link:** **[📂 Download STL Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter_Enclosure_STL)**
+  
 **Printing Notes:**
 You can export the `.STL` files directly from the link above. Standard PLA or PETG is suitable for this project. The case is designed to keep the low-voltage electronics isolated and secure.
+
+## PCB Design & Fabrication
+
+For a cleaner build and enhanced reliability, a custom PCB has been designed to replace hand-wiring. This board hosts the Arduino Nano, ADS1115, and input connectors.
+
+### Key Hardware Features
+* **Hardware Input Protection:** The board includes **1N4733A Zener Diodes (5.1V)** on the probe inputs. These clamp any incoming voltage spikes to ~5.1V, protecting the sensitive ADS1115 ADC from damage in case of a tube failure or surge.
+* **Simplified Assembly:** Eliminates the "rat's nest" of wires common in DIY builds.
+* **Fabrication Ready:** You can use the provided Gerber/KiCad files to order these boards from any fabrication house (e.g., PCBWay, JLCPCB, OSH Park).
+
+### Board Views
+![PCB Board Layout](https://github.com/ToneAlchemy/BiasMeter/raw/23a8e443d3858fa2ae11c6348a671421652070ce/HARDWARE%20-%20PCB%20KICAD/BiasMeter_InputProtection.png)
+
+![PCB Schematic](https://github.com/ToneAlchemy/BiasMeter/raw/23a8e443d3858fa2ae11c6348a671421652070ce/HARDWARE%20-%20PCB%20KICAD/BiasMeter_Schematic.png)
+
+* **Download Link:** **[📂 Download PCB & KiCad Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter%20-%20KICAD)**
+
 
 ## Wiring / Pinout Guide
 
