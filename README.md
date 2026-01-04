@@ -237,9 +237,14 @@ This feature significantly improves accuracy compared to standard bias probes.
 
 ## Licensing
 
-This work, **"Bias Meter"** by Charlie Isaac (ToneAlchemy.com), is licensed under a **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+This project, **"Bias Meter"** by Charlie Isaac (ToneAlchemy.com), is released under the **GNU General Public License v3.0 (GPLv3)**.
 
-### Attribution History
-This project is an adaptation of:
-* **"Dual Channel Arduino Bias Tester beta 14"** by Kiel Lydestad (3DBeerGoggles) (CC BY 4.0).
-* **"ArduinoBiasMeter"** by John Wagner (CC BY 4.0).
+### What this means:
+* **Open Source:** You are free to use, modify, and distribute this software.
+* **ShareAlike:** If you modify this project and distribute it (or a product based on it), you **MUST** release your modifications under the same GPLv3 license. You cannot close-source this project.
+* **No Warranty:** This software is provided "as is" without warranty of any kind.
+
+### Attribution & Legacy
+This project is an evolution of earlier open-source works released under the **CC BY 4.0** license. In accordance with that license, we gratefully acknowledge the original authors:
+* Based on **"Dual Channel Arduino Bias Tester beta 14"** by Kiel Lydestad (3DBeerGoggles).
+* Based on **"ArduinoBiasMeter"** by John Wagner.
