@@ -142,6 +142,8 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
 
 ## Installation
 
+* **Download Link:** **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
+* 
 1.  **Library Dependencies:** Install the following via the Arduino IDE Library Manager:
     * `Adafruit GFX Library`
     * `Adafruit ST7735 and ST7789 Library`
