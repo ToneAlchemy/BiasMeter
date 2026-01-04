@@ -7,8 +7,7 @@ CORE ELECTRONICS
 
 [ ] 1x Arduino Nano (or compatible clone)
     - Link: https://amzn.to/4n7FcF8
-    - Link: https://s.click.aliexpress.com/e/_c3ji19qR
-
+ 
 [ ] 1x Adafruit ADS1115 16-Bit ADC
     - Link: https://amzn.to/46h8RpA
 
