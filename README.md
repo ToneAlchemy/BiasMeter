@@ -58,6 +58,9 @@ Unlike previous iterations that required hard-coding values, V11.3 is a fully st
 | -        | Hook-up Wire                  | 22 AWG for internals                             |
 | 2        | Bias Probes                   | Octal (8-pin) probes (e.g., TubeDepot Bias Scout or DIY) |
 
+
+* **Download Link:** **[📂 Download BOM Files Here](HARDWARE%20-%20PCB%20KICAD/Bill%20of%20Materials%20(BOM)%20for%20the%20BIASMETER.txt)
+
 ## 3D Printed Enclosure
 
 A custom enclosure has been designed to house the Arduino Nano, Display, and Buttons safely.
