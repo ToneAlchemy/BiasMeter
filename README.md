@@ -78,9 +78,13 @@ For a cleaner build and enhanced reliability, a custom PCB has been designed to 
 * **Simplified Assembly:** Eliminates the "rat's nest" of wires common in DIY builds.
 * **Fabrication Ready:** You can use the provided Gerber/KiCad files to order these boards from any fabrication house (e.g., PCBWay, JLCPCB, OSH Park).
 
-### Board Views
+### PCB Board Views
 ![PCB Board Layout](https://github.com/ToneAlchemy/BiasMeter/raw/23a8e443d3858fa2ae11c6348a671421652070ce/HARDWARE%20-%20PCB%20KICAD/BiasMeter_InputProtection.png)
 
+### PCB Board Components Views
+![PCB Board Layout - Componets ](HARDWARE%20-%20PCB%20KICAD/BiasMeter_InputProtection_v3_3dView.png)
+
+### Schematic layout
 ![PCB Schematic](https://github.com/ToneAlchemy/BiasMeter/raw/23a8e443d3858fa2ae11c6348a671421652070ce/HARDWARE%20-%20PCB%20KICAD/BiasMeter_Schematic.png)
 
 * **Download Link:** **[📂 Download PCB & KiCad Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter%20-%20KICAD)**
