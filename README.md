@@ -36,6 +36,7 @@ This repository offers three distinct firmware versions. Choose the one that bes
 | **Data Protection** | ✅ Checksum + ID | ✅ Checksum + ID | ⚠️ Basic ID Only |
 | **Safety Clamps** | ✅ Yes | ✅ Yes | ❌ No |
 | **Limit Handling** | Freezes until safe (<550V) | Freezes until safe (<550V) | Freezes until safe (<550V) |
+| **Tube Profiles** | **6 Default Profiles** | **6 Default Profiles** | 3 Default Profiles |
 | **Best For...** | **Most Users.** Best balance of safety and usability. | **Safety Critical.** Auto-reboots if the CPU freezes. | Older Builds. |
 
 * **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
@@ -247,12 +248,14 @@ This feature significantly improves accuracy compared to standard bias probes.
 * **The Physics:** Standard bias probes measure **Cathode Current**, which is the sum of Plate Current + Screen Current. However, Bias should be calculated using only **Plate Current**.
 * **The Solution:** The "Screen % Factor" subtracts a percentage of the total current to estimate the true Plate Current.
     * `True Plate Current = Measured Current - (Measured Current * ScreenFactor)`
+    
 * **Recommended Settings:**
     * **EL34:** ~13% (0.13) - Pentodes draw more screen current.
+    * **KT88 / 6550:** ~6.0% (0.06) - High power beam tetrodes.
     * **6L6GC:** ~5.5% (0.055) - Beam Tetrodes draw less.
-    * **6V6:** ~4.5% (0.045)
+    * **EL84:** ~5.0% (0.05) - Miniature pentodes.    * **6V6:** ~4.5% (0.045)
     * **Raw Mode:** Set to 0.00 to see the raw total current without subtraction.
-
+  
 ## Licensing
 
 This project, **"Bias Meter"** by Charlie Isaac (ToneAlchemy.com), is released under the **GNU General Public License v3.0 (GPLv3)**.
