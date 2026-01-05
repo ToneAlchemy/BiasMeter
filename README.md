@@ -1,8 +1,8 @@
-# Arduino Tube Amp Bias Meter (V11.3 Platinum)
+# Arduino Tube Amp Bias Meter (V11.4 Platinum)
 
 This repository contains the complete source code and documentation for a professional-grade, dual-probe vacuum tube bias meter. Designed for guitar amplifier technicians and hobbyists, this tool allows for the precise measurement and setting of bias for power tubes (EL34, 6L6GC, 6V6, etc.) using a high-resolution color interface.
 
-**Current Version:** V11.3 Platinum (Stable Release)
+**Current Recommended Version:** V11.4 Platinum (Stable Standard Release)
 
 > [!CAUTION]
 > ## ⚠️ WARNING: HIGH VOLTAGE SAFETY
@@ -25,18 +25,33 @@ This project is the culmination of extensive development, evolving from earlier 
     1.  **"Dual Channel Arduino Bias Tester beta 14"** by Kiel Lydestad (3DBeerGoggles).
     2.  **"ArduinoBiasMeter"** by John Wagner.
 
-## Features (V11.3 Highlights)
+## Firmware Versions & Downloads
 
-Unlike previous iterations that required hard-coding values, V11.3 is a fully standalone tool with a dynamic operating system.
+This repository offers three distinct firmware versions. Choose the one that best fits your needs.
+
+| Feature | **v11.4 (Recommended)** | **v11.4.1 (WTD Edition)** | **v11.3 (Legacy)** |
+| :--- | :--- | :--- | :--- |
+| **Stability Status** | **Gold Master (Standard)** | **Gold Master (Advanced)** | Legacy Stable |
+| **Watchdog Timer** | ❌ Disabled | ✅ Enabled (Auto-Reset) | ❌ Disabled |
+| **Data Protection** | ✅ Checksum + ID | ✅ Checksum + ID | ⚠️ Basic ID Only |
+| **Safety Clamps** | ✅ Yes | ✅ Yes | ❌ No |
+| **Limit Handling** | Freezes until safe (<550V) | Freezes until safe (<550V) | Freezes until safe (<550V) |
+| **Best For...** | **Most Users.** Best balance of safety and usability. | **Safety Critical.** Auto-reboots if the CPU freezes. | Older Builds. |
+
+* **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
+
+## Features (V11.4 Highlights)
+
+V11.4 introduces professional-grade data integrity and safety features not found in previous iterations or DIY alternatives.
 
 ### 🛠 Core Functionality
 * **Dual Probe Measurement:** Simultaneous real-time monitoring of Tube A and Tube B.
 * **True Plate Dissipation:** Calculates power (Watts) and dissipation percentage based on the specific tube type.
 * **Screen Current Correction:** Implements industry-standard math to subtract estimated screen current, ensuring the displayed bias represents true *Plate* dissipation, not just Cathode current.
 
-### 💾 Dynamic Database System (New in V11.3)
-* **EEPROM Tube Manager:** Users can **Add, Edit, Delete, and Save** tube profiles directly on the device using the onboard menu. No need to re-upload code to add a new tube type.
-* **Memory Safety Clamps:** Built-in protection against memory corruption and buffer overflows.
+### 💾 Robust Data Integrity (New in V11.4)
+* **Checksum Protection:** The EEPROM data now includes a computed checksum. If the memory is corrupted or a new chip is installed, the system detects the error and automatically restores safe default values, preventing dangerous behavior.
+* **Safety Clamps:** The Calibration Menu now prevents users from accidentally setting dangerous values (e.g., setting a shunt resistor to 0.0Ω or a voltage scaler to 0), effectively "clamping" entries to safe, realistic ranges.
 
 ### 🛡️ Safety & Reliability
 * **Active Over-Voltage Monitor:** Continuous safety checks will lock the interface and display a "DANGER" warning if probe voltage exceeds limits.
@@ -50,16 +65,16 @@ Unlike previous iterations that required hard-coding values, V11.3 is a fully st
 
 | Quantity | Component                     | Description                                      |
 | :------- | :---------------------------- | :----------------------------------------------- |
-| 1        | Arduino Nano   (Recommended: USB-C Version)               | Microcontroller board (ATmega328P)               |
+| 1        | Arduino Nano   (Recommended: USB-C Version)                | Microcontroller board (ATmega328P)               |
 | 1        | Adafruit ST7735 1.8" TFT      | 160x128 Color TFT Display (SPI)                  |
 | 1        | ADS1115 16-Bit ADC Module     | High-precision 4-channel ADC (I2C)               |
-| 3        | Tactile Push Buttons          | Menu navigation (Left, Right, Center/Select)     |
+| 3        | Tactile Push Buttons          | Menu navigation (Left, Right, Center/Select)      |
 | 1        | Project Enclosure             | 3D printed case (See below)                      |
 | -        | Hook-up Wire                  | 22 AWG for internals                             |
 | 2        | Bias Probes                   | Octal (8-pin) probes (e.g., TubeDepot Bias Scout or DIY) |
 
 
-* **Download Link:** **[📂 Download BOM Files Here](HARDWARE%20-%20PCB%20KICAD/Bill%20of%20Materials%20(BOM)%20for%20the%20BIASMETER.txt)
+* **Download Link:** **[📂 Download BOM Files Here](HARDWARE%20-%20PCB%20KICAD/Bill%20of%20Materials%20(BOM)%20for%20the%20BIASMETER.txt)**
 
 ## 3D Printed Enclosure
 
@@ -142,8 +157,6 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
 
 ## Installation
 
-* **Download Link:** **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
-  
 1.  **Library Dependencies:** Install the following via the Arduino IDE Library Manager:
     * `Adafruit GFX Library`
     * `Adafruit ST7735 and ST7789 Library`
@@ -152,7 +165,9 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
     * **ADS1115:** Connect via I2C (SDA -> A4, SCL -> A5).
     * **TFT Display:** Connect via SPI (Pins 8, 9, 10, 11, 13 defined in code).
     * **Buttons:** Connect to Digital Pins 5 (Left), 6 (Right), and 7 (Center/Select).
-3.  **Upload:** Flash `BiasMeter_V11.3_PLATINUM.ino` to the Arduino Nano.
+3.  **Upload:**
+    * **Recommended:** Flash `BiasMeter_V11.4_PLATINUM.ino` to the Arduino Nano for the best balance of safety and stability.
+    * **Advanced:** Flash `BiasMeter_V11.4.1_WTD.ino` if you require Watchdog Timer functionality.
 
 ## Usage Guide
 
@@ -160,11 +175,12 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
 * **Navigation:** Use **Left/Right** to scroll through tube profiles.
 * **Selection:** Press **Center** to select a tube and begin measuring.
 
-### Tube Manager (New)
+### Tube Manager (Updated in v11.4)
 * Select **"TUBE MANAGER"** from the main menu.
 * **Add/Edit/Delete:** You can create new tube profiles or edit existing ones (Name, Max Dissipation, Screen % Factor) and delete tube profiles.
 * **Navigation:** Press **Center** to advance between fields. Press **Left/Right** to adjust values.
 * **Save:** Navigate to `[SAVE]` and press Center to write to permanent memory.
+* **Data Safety:** V11.4 automatically calculates a checksum when you save, ensuring your custom tubes are protected against corruption.
 
 ## Calibration Guide
 
