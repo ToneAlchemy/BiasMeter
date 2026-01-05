@@ -906,7 +906,7 @@ void displaySplashScreen() {
   tft.setTextColor(ST7735_CYAN); tft.setTextSize(1);
   tft.setCursor(45, 64); tft.println(F("Tone Alchemy"));
 
-  tft.setTextColor(ST7735_MAGENTA); tft.setCursor(70, 80); tft.println(F("v1")); 
+  tft.setTextColor(ST7735_MAGENTA); tft.setCursor(70, 80); tft.println(F("v11.3")); 
   
   // --- New code to display the attribution URL ---
   tft.setTextColor(ST7735_YELLOW); // A different color for visibility
