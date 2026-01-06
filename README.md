@@ -258,11 +258,12 @@ The **Tube Manager** is powerful because it allows you to customize how the mete
 
 ### 1. Max Dissipation (Watts)
 This determines the "Red Line" for your tube. The meter uses this value to calculate the **% Dissipation** displayed on the screen.
-* **How to set:** Look up the "Max Plate Dissipation" in the tube's datasheet.
-* **Examples:**
-    * EL34 = 25 Watts
-    * 6L6GC = 30 Watts
-    * 6V6 = 14 Watts
+* **How to set:** Look up the "Max Plate Dissipation" in your specific tube's datasheet.
+* **Examples (Typical Values):**
+    * **EL34:** 25 Watts
+    * **6L6GC:** 30 Watts
+    * **6V6:** 12-14 Watts (Check your specific tube's datasheet; older types are lower).
+    * **KT88 / 6550:** 35-42 Watts
 * **Usage:** If you set this to 25W and measure 17.5W of dissipation, the meter will display **70%**.
 
 ### 2. Screen % Factor (Accuracy Tuning)
