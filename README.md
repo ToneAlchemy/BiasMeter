@@ -22,6 +22,7 @@ This repository contains the complete source code and documentation for a profes
 >
 > * **Visual Guide:** 
 > * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
+> * **Discharge Tool:** Do not rely on the amp to drain itself. Use a dedicated **Capacitor Discharge Tool** (a probe with a high-wattage resistor connected to ground) to safely bleed off voltage. You can buy one or easily build your own.
 > * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
 
 > [!NOTE]
@@ -303,7 +304,8 @@ This feature significantly improves accuracy compared to standard bias probes.
     * **EL34:** ~13% (0.13) - Pentodes draw more screen current.
     * **KT88 / 6550:** ~6.0% (0.06) - High power beam tetrodes.
     * **6L6GC:** ~5.5% (0.055) - Beam Tetrodes draw less.
-    * **EL84:** ~5.0% (0.05) - Miniature pentodes.    * **6V6:** ~4.5% (0.045)
+    * **EL84:** ~5.0% (0.05) - Miniature pentodes.
+    * * **6V6:** ~4.5% (0.045)
     * **Raw Mode:** Set to 0.00 to see the raw total current without subtraction.
   
 ## Licensing
