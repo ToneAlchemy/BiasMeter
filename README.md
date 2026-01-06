@@ -31,10 +31,10 @@ This repository contains the complete source code and documentation for a profes
 > 
 > * **Isolation Transformer:** This isolates the amplifier from the mains earth ground, significantly reducing the risk of lethal shock if you accidentally touch a live component while grounded.
 > * **Dim Bulb Limiter (Current Limiter):** Essential when powering up an amplifier for the first time after a repair. It prevents catastrophic damage (blown transformers) if there is a short circuit.
->     * **⚠️ CRITICAL WARNING:** Do **NOT** attempt to set the final bias while running through a Dim Bulb Limiter. The limiter drops the wall voltage, which lowers the plate voltage and gives false low bias readings. Always bypass the limiter > for the final precision bias adjustment.
+>      * **⚠️ CRITICAL WARNING:** Do **NOT** attempt to set the final bias while running through a Dim Bulb Limiter. The limiter drops the wall voltage, which lowers the plate voltage and gives false low bias readings. Always bypass the limiter for the final precision bias adjustment.
 > * **Variac (Variable Transformer):** Highly recommended for two purposes:
->     1.  **Voltage Stabilization:** Wall voltage fluctuates. A Variac allows you to set the input voltage exactly to your country's standard (e.g., 240V in Australia, 120V in USA, 230V in UK). This ensures your bias readings are accurate and consistent, rather than drifting with high/low wall voltage.
->     2.  **Soft Start / Reforming:** Useful for slowly bringing up the voltage on vintage amplifiers to reform old capacitors safely.
+>      1.  **Voltage Stabilization:** Wall voltage fluctuates. A Variac allows you to set the input voltage exactly to your country's standard (e.g., 240V in Australia, 120V in USA, 230V in UK). This ensures your bias readings are accurate and consistent, rather than drifting with high/low wall voltage.
+>      2.  **Soft Start / Reforming:** Useful for slowly bringing up the voltage on vintage amplifiers to reform old capacitors safely.
 
 ## Project Evolution & Attribution
 
@@ -105,7 +105,7 @@ V11.4 introduces professional-grade data integrity and safety features not found
 | 1        | Arduino Nano   (Recommended: USB-C Version)                 | Microcontroller board (ATmega328P)               |
 | 1        | Adafruit ST7735 1.8" TFT      | 160x128 Color TFT Display (SPI)                  |
 | 1        | ADS1115 16-Bit ADC Module     | High-precision 4-channel ADC (I2C)               |
-| 3        | Tactile Push Buttons          | Menu navigation (Left, Right, Center/Select)      |
+| 3        | Tactile Push Buttons          | Menu navigation (Left, Right, Center/Select)     |
 | 1        | Project Enclosure             | 3D printed case (See below)                      |
 | -        | Hook-up Wire                  | 22 AWG for internals                             |
 | 2        | Bias Probes                   | Octal (8-pin) probes (e.g., TubeDepot Bias Scout or DIY) |
@@ -305,7 +305,7 @@ This feature significantly improves accuracy compared to standard bias probes.
     * **KT88 / 6550:** ~6.0% (0.06) - High power beam tetrodes.
     * **6L6GC:** ~5.5% (0.055) - Beam Tetrodes draw less.
     * **EL84:** ~5.0% (0.05) - Miniature pentodes.
-    * * **6V6:** ~4.5% (0.045)
+    * **6V6:** ~4.5% (0.045)
     * **Raw Mode:** Set to 0.00 to see the raw total current without subtraction.
   
 ## Licensing
