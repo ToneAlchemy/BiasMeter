@@ -24,6 +24,15 @@ This repository contains the complete source code and documentation for a profes
 > * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
 > * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
 
+> [!NOTE]
+> ### 🛡️ Recommended Safety Gear
+> If you are working inside a live amplifier chassis, we strongly recommend using the following safety equipment:
+> 
+> * **Isolation Transformer:** This isolates the amplifier from the mains earth ground, significantly reducing the risk of lethal shock if you accidentally touch a live component while grounded.
+> * **Dim Bulb Limiter (Current Limiter):** Essential when powering up an amplifier for the first time after a repair. It prevents catastrophic damage (blown transformers) if there is a short circuit.
+>     * **⚠️ CRITICAL WARNING:** Do **NOT** attempt to set the final bias while running through a Dim Bulb Limiter. The limiter drops the wall voltage, which lowers the plate voltage and gives false low bias readings. Always bypass the limiter > for the final precision bias adjustment.
+> * **Variac:** Useful for slowly bringing up the voltage on vintage amplifiers to reform capacitors.
+
 ## Project Evolution & Attribution
 
 This project is the culmination of extensive development, evolving from earlier open-source concepts into a fully distinct firmware product.
