@@ -41,6 +41,22 @@ This repository offers three distinct firmware versions. Choose the one that bes
 
 * **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
 
+## 💻 Software & Development Environment
+
+This project is written as a standard Arduino sketch (`.ino`) and was developed using the official **Arduino IDE**.
+
+**Recommended Method:**
+We strongly recommend using the **Arduino IDE** for the easiest setup. Its built-in *Library Manager* (Tools > Manage Libraries) makes it simple to install the required dependencies (Adafruit GFX, ADS1X15, etc.) without complex manual configuration.
+
+**Alternative IDEs:**
+Advanced users can compile this code in other environments, such as **Visual Studio Code (with PlatformIO)** or **Microchip Studio**. However, please note:
+* You will likely need to manually manage library paths and dependencies.
+* Depending on your environment, you may need to rename the source file from `.ino` to `.cpp` or adjust the structure.
+
+**📥 Get the Software:**
+You can download the latest version of the Arduino IDE here:
+[**Download Official Arduino IDE**](https://www.arduino.cc/en/software)
+
 ## Features (V11.4 Highlights)
 
 V11.4 introduces professional-grade data integrity and safety features not found in previous iterations or DIY alternatives.
