@@ -35,7 +35,7 @@ This repository offers three distinct firmware versions. Choose the one that bes
 | **Watchdog Timer** | ❌ Disabled | ✅ Enabled (Auto-Reset) | ❌ Disabled |
 | **Data Protection** | ✅ Checksum + ID | ✅ Checksum + ID | ⚠️ Basic ID Only |
 | **Safety Clamps** | ✅ Yes | ✅ Yes | ❌ No |
-| **Limit Handling** | Freezes until safe (<550V) | Freezes until safe (<550V) | Freezes until safe (<550V) |
+| **Limit Handling** | Freezes until safe (<550V) | Freezes until safe (<550V) | Freezes until safe (User Limit - 50V) |
 | **Tube Profiles** | **6 Default Profiles** | **6 Default Profiles** | 3 Default Profiles |
 | **Best For...** | **Most Users.** Best balance of safety and usability. | **Safety Critical.** Auto-reboots if the CPU freezes. | Older Builds. |
 
