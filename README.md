@@ -16,6 +16,14 @@ This repository contains the complete source code and documentation for a profes
 >
 > **DISCLAIMER & NO SUPPORT:** This project is provided "as is" with **no warranty and no technical support**. The author cannot provide assistance with assembly, troubleshooting, or code modifications. The author assumes no liability for injury, death, or equipment damage resulting from the use or construction of this device. **Use entirely at your own risk.**
 
+> [!IMPORTANT]
+> ### ⚡ Critical Safety: Capacitor Discharge
+> Before touching any internal component or connecting probes to a chassis, you must verify the filter capacitors are drained.
+>
+> * **Visual Guide:** 
+> * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
+> * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
+
 ## Project Evolution & Attribution
 
 This project is the culmination of extensive development, evolving from earlier open-source concepts into a fully distinct firmware product.
@@ -82,7 +90,7 @@ V11.4 introduces professional-grade data integrity and safety features not found
 
 | Quantity | Component                     | Description                                      |
 | :------- | :---------------------------- | :----------------------------------------------- |
-| 1        | Arduino Nano   (Recommended: USB-C Version)                | Microcontroller board (ATmega328P)               |
+| 1        | Arduino Nano   (Recommended: USB-C Version)                 | Microcontroller board (ATmega328P)               |
 | 1        | Adafruit ST7735 1.8" TFT      | 160x128 Color TFT Display (SPI)                  |
 | 1        | ADS1115 16-Bit ADC Module     | High-precision 4-channel ADC (I2C)               |
 | 3        | Tactile Push Buttons          | Menu navigation (Left, Right, Center/Select)      |
@@ -144,8 +152,16 @@ For a cleaner build and enhanced reliability, a custom PCB has been designed to 
 | | GND | GND |
 
 ### Arduino Nano Pinout 
-
 ![Arduino Nano Pinout](https://github.com/ToneAlchemists/BiasMeter/blob/25a091382b33c8da140eac9d3a7a2a432e6024f1/IMAGES/nano_pinout.jpg)
+
+### 🔌 Probe Wiring (Octal Sockets)
+If you are building your own probes, correct wiring is essential for the math to work.
+
+* **Pin 3 (Plate):** Connects to the Voltage Divider.
+* **Pin 8 (Cathode):** Connects to the Shunt Resistor (and Ground).
+* **Pin 1 & 8:** Often tied together in 6L6/EL34 amps.
+
+
 
 ## Powering the Device (Crucial Safety Info)
 
@@ -223,7 +239,7 @@ For the highest accuracy, use this method to match the meter readings to a trust
 3.  **Measure:** Power on the amp. Use your DMM to measure the actual DC Voltage at the safe test point you identified.
 4.  **Adjust:** In the Bias Meter "CAL SETUP" menu, select **"Adj Volt Scale A"**.
 5.  **Match:** Use the Left/Right buttons to adjust the scale factor until the **"Live V"** on the screen matches the voltage shown on your DMM.
-6.  Repeat for Probe B.
+6.  **Repeat** for Probe B.
 
 #### B. Calibrating Shunt Resistors (Bias Scout Probes)
 If you are using commercial probes like the **Tube Depot Bias Scout**, they typically have three banana plugs: Red, Black, and White.
@@ -258,7 +274,7 @@ The **Tube Manager** is powerful because it allows you to customize how the mete
 
 ### 1. Max Dissipation (Watts)
 This determines the "Red Line" for your tube. The meter uses this value to calculate the **% Dissipation** displayed on the screen.
-* **How to set:** Look up the "Max Plate Dissipation" in your specific tube's datasheet.
+* **How to set:** Look up the "Max Plate Dissipation" in the tube's datasheet.
 * **Examples (Typical Values):**
     * **EL34:** 25 Watts
     * **6L6GC:** 30 Watts
