@@ -104,7 +104,7 @@ For a cleaner build and enhanced reliability, a custom PCB has been designed to 
 ![PCB Board Layout - Componets ](HARDWARE%20-%20PCB%20KICAD/BiasMeter_InputProtection_v3_3dView.png)
 
 ### Schematic layout
-![PCB Schematic](https://github.com/ToneAlchemy/BiasMeter/raw/23a8e443d3858fa2ae11c6348a671421652070ce/HARDWARE%20-%20PCB%20KICAD/BiasMeter_Schematic.png)
+![PCB Schematic](HARDWARE%20-%20PCB%20KICAD/BiasMeter_Schematic.png)
 
 * **Download Link:** **[📂 Download PCB & KiCad Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter%20-%20KICAD)**
 
