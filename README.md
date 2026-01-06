@@ -58,6 +58,12 @@ This repository offers three distinct firmware versions. Choose the one that bes
 | **Tube Profiles** | **6 Default Profiles** | **6 Default Profiles** | 3 Default Profiles |
 | **Best For...** | **Most Users.** Best balance of safety and usability. | **Safety Critical.** Auto-reboots if the CPU freezes. | Older Builds. |
 
+### Which Version Should I Choose?
+
+* **v11.4.1 (WTD Edition):** **Use this first.** This is the most robust version. It includes a "Watchdog Timer" that constantly monitors the processor. If electrical noise from the tube amp (sparks, EMI) causes the screen to freeze, the system will automatically reboot in 4 seconds. This is critical for safety.
+* **v11.4 (Standard):** **Use this if v11.4.1 fails.** Some cheaper Arduino Nano clones have incompatible bootloaders that crash when the Watchdog Timer is used. If v11.4.1 gets stuck in a reboot loop on your device, switch to this version. It has all the same features but without the auto-reboot safety.
+* **v11.3 (Legacy):** **Use only for backups.** This is an older stable release. It lacks the advanced EEPROM Checksum data protection and the expanded tube database of the v11.4 series.
+
 * **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
 
 ## 💻 Software & Development Environment
