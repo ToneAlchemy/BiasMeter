@@ -233,10 +233,16 @@ If you are using commercial probes like the **Tube Depot Bias Scout**, they typi
     * **Black:** Common (Ground)
     * **White:** Cathode (Current Measurement)
     * **Red:** Plate (Voltage Measurement) - *Do not use for this step.*
-3.  **Measure:** Set your DMM to measure Resistance (Ohms) at its lowest setting. Connect one DMM lead to the **Black** plug and the other to the **White** plug.
-4.  **Adjust:** In the "CAL SETUP" menu, select **"Adj Shunt Res A"**.
-5.  **Match:** Adjust the value on screen to match the exact resistance you measured (e.g., if your DMM reads 1.02Ω, set the screen to 1.02).
-6.  Repeat for Probe B.
+3.  **Find DMM Lead Resistance (Critical for Accuracy):**
+    * Turn your DMM to its lowest Resistance (Ω) setting.
+    * Touch the Red and Black DMM probes firmly together.
+    * Note the number (e.g., **0.2Ω**). This is your "Lead Resistance."
+4.  **Measure Probe:** Connect one DMM lead to the **Black** plug and the other to the **White** plug of the bias probe. Write down the total resistance (e.g., **1.2Ω**).
+5.  **Calculate Actual Value:** Subtract the Lead Resistance from the Total.
+    * *Math:* `1.2Ω (Total) - 0.2Ω (Leads) = 1.00Ω (Actual)`
+    * *Why?* For a 1.0Ω resistor, a 0.2Ω error is huge (20%)! Not subtracting it could lead you to bias your amp dangerously hot.
+6.  **Adjust:** In the "CAL SETUP" menu, select **"Adj Shunt Res A"** and enter the **Actual Value** (e.g., 1.00).
+7.  **Repeat** for Probe B.
 
 #### C. Voltage Threshold Limiter
 The **"Adj Voltage Limit"** setting is a safety tripwire.
