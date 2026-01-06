@@ -118,8 +118,8 @@ V11.4 introduces professional-grade data integrity and safety features not found
 A custom enclosure has been designed to house the Arduino Nano, Display, and Buttons safely.
 
 * **Design Platform:** TinkerCAD
-* **Download Link:** [Bias Meter Enclosure V11 Files](https://www.tinkercad.com/things/gKRXVebJSTF/edit?sharecode=gUTg7qwfboPwH2RXnympp6uQYQx4FWwdrr1dFZcTKMg)
-* **Download Link:** **[📂 Download STL Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter_Enclosure_STL)**
+* **Editable Source:** [Bias Meter Enclosure V11 Files](https://www.tinkercad.com/things/gKRXVebJSTF/edit?sharecode=gUTg7qwfboPwH2RXnympp6uQYQx4FWwdrr1dFZcTKMg) *(Note: You must be logged into Tinkercad to access this link)*
+* **Ready-to-Print Files:** **[📂 Download STL Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter_Enclosure_STL)**
   
 **Printing Notes:**
 You can export the `.STL` files directly from the link above. Standard PLA or PETG is suitable for this project. The case is designed to keep the low-voltage electronics isolated and secure.
