@@ -36,6 +36,11 @@ This repository contains the complete source code and documentation for a profes
 >      1.  **Voltage Stabilization:** Wall voltage fluctuates. A Variac allows you to set the input voltage exactly to your country's standard (e.g., 240V in Australia, 120V in USA, 230V in UK). This ensures your bias readings are accurate and consistent, rather than drifting with high/low wall voltage.
 >      2.  **Soft Start / Reforming:** Useful for slowly bringing up the voltage on vintage amplifiers to reform old capacitors safely.
 
+> [!TIP]
+> **New to Biasing?** Check out our dedicated guide:
+> ### 📖 [Read the Step-by-Step Biasing Guide](BIASING_GUIDE.md)
+> *Learn how to safely bias Fender Prosonic & Fixed-Bias Amps.*
+
 ## Project Evolution & Attribution
 
 This project is the culmination of extensive development, evolving from earlier open-source concepts into a fully distinct firmware product.
