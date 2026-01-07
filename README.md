@@ -378,6 +378,41 @@ This feature significantly improves accuracy compared to standard bias probes.
     * **EL84:** ~5.0% (0.05) - Miniature pentodes.
     * **6V6:** ~4.5% (0.045)
     * **Raw Mode:** Set to 0.00 to see the raw total current without subtraction.
+ 
+## 🔌 DIY Probe Construction & Theory
+While we recommend the **Tube Depot Bias Scout Kit** for the easiest assembly, you can build your own probes using standard components. This is ideal for international builders or those who prefer custom setups.
+
+### 🛠️ DIY Parts List (Per Probe)
+To build one probe, you will need:
+* **1x Octal Tube Base:** (e.g., P-SP8-47X) - The male plug that goes into the amp.
+* **1x Octal PCB Socket:** (e.g., P-ST8-810-PCL) - The female socket the tube plugs into.
+* **1x 1Ω Resistor:** (2 Watt or greater, 1% - 5% Tolerance) - *Current Shunt*.
+* **1x 1MΩ Resistor:** (1/2 Watt or greater, 1% Tolerance) - *Voltage Divider High Side*.
+* **1x 100Ω Resistor:** (1/8 Watt or greater, 1% Tolerance) - *Voltage Divider Low Side*.
+* **3-Conductor Cabling:** Shielded audio cable or twisted wire.
+* **Banana Plugs / Jacks:** To connect to the main unit.
+
+> [!NOTE]
+> The **Hoffman Amps Bias Checker** probe design will **NOT** work with this project. That probe only measures Cathode Current. This project requires probes that measure both Plate Voltage *and* Cathode Current.
+
+### ⚡ How It Works (The Theory)
+The probe acts as a "Pass-Through" adapter that sits between the amplifier socket and the power tube. It intercepts specific pins and sends the raw data to the **ADS1115 ADC**, which converts it into a high-precision digital signal for the Arduino.
+
+#### 1. Measuring Plate Voltage (Safety Divider)
+The probe monitors **Pin 3 (Plate)** using a precision voltage divider network.
+* **The Circuit:** A **1MΩ** and **100Ω** resistor are placed in series from Plate to Ground.
+* **The Math:** This creates a 10,001:1 ratio. If your amp has **450VDC** on the plate, the divider steps this down to approx **45mV**.
+* **The Signal Path:** This safe, tiny voltage is read by the ADS1115. The software then multiplies this value back up to display the true high voltage.
+
+#### 2. Measuring Dissipation (Current Shunt)
+The probe intercepts **Pin 8 (Cathode)** using a **1Ω Shunt Resistor**.
+* **The Circuit:** The resistor sits between the tube's cathode and the amp's ground return.
+* **The Math:** According to Ohm's Law ($V = I \times R$), 1mV across a 1Ω resistor equals 1mA of current.
+* **The Signal Path:** The ADS1115 measures this millivolt drop with extreme precision (far better than standard Arduino pins), allowing for stable readings even at low idle currents.
+
+#### 3. Screen Current Correction (Ig2)
+Because the Cathode Current reading includes both Plate Current *and* Screen Grid Current, the total dissipation can be slightly inflated.
+* **V11.4 Feature:** The firmware allows you to subtract an estimated Screen Current % (e.g., 5.5% for EL34s). This gives you the **True Plate Dissipation**, ensuring you don't bias the amp colder than necessary.
   
 ## Licensing
 
