@@ -145,7 +145,6 @@ Once the system knows the Voltage (V) and the Current (I), it calculates the Pla
 * **Formula:** `Watts = Plate Voltage × Plate Current`
 * **Screen Correction:** If enabled, the system first subtracts the estimated Screen Current from the total current to ensure the Wattage displayed is for the **Plate only**, providing the most accurate bias reading possible.
 
-
 ## Bill of Materials (BOM)
 
 | Quantity | Component                     | Description                                      |
@@ -206,7 +205,6 @@ For a cleaner build and enhanced reliability, a custom PCB has been designed to 
 
 * **Download Link:** **[📂 Download PCB & KiCad Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter%20-%20KICAD)**
 
-
 ## Wiring / Pinout Guide
 
 ### Arduino Nano Connections
@@ -235,7 +233,9 @@ If you are building your own probes, correct wiring is essential for the math to
 * **Pin 8 (Cathode):** Connects to the Shunt Resistor (and Ground).
 * **Pin 1 & 8:** Often tied together in 6L6/EL34 amps.
 
+![Octal Tube Socket Pinout](https://upload.wikimedia.org/wikipedia/commons/a/a3/6V6_%2C_6L6_Tube_pin-out_.jpg)
 
+*Figure: Standard Octal (8-Pin) Pinout (Bottom View).*
 
 ## Powering the Device (Crucial Safety Info)
 
@@ -273,7 +273,7 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
     * **TFT Display:** Connect via SPI (Pins 8, 9, 10, 11, 13 defined in code).
     * **Buttons:** Connect to Digital Pins 5 (Left), 6 (Right), and 7 (Center/Select).
 3.  **Upload:**
-    * **Recommended:** Flash `BiasMeter_V11.4_PLATINUM.ino` to the Arduino Nano for the best balance of safety and stability.
+    * **Recommended:** Flash `BiasMeter_V11.4.ino` to the Arduino Nano for the best balance of safety and stability.
     * **Advanced:** Flash `BiasMeter_V11.4.1_WTD.ino` if you require Watchdog Timer functionality.
 
 ## Usage Guide
