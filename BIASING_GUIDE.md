@@ -73,3 +73,11 @@ Use these generic targets for Class AB fixed-bias amps if you are not using the 
 * **Warm (60-70%):** The "Golden Zone." Good balance of warmth, harmonic content, and tube life.
 
 * **Hot (70%+):** Reduced tube life. High compression and earlier breakup. **Risk of Red Plating.**
+
+---
+## 📚 References
+* **Fender Prosonic Service Manual (Rev E, 1996):**
+    * *Schematic Reference:* 050173
+    * *Part Number:* 021-1007-000 (Combo) / 021-2007-000 (Head)
+    * *Relevant Section:* Page 7, Schematic Diagram (Note 3: "Bias set to -46 VDC...")
+
