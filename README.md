@@ -21,7 +21,8 @@ This repository contains the complete source code and documentation for a profes
 > Before touching any internal component or connecting probes to a chassis, you must verify the filter capacitors are drained.
 >
 > * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
-> * **Discharge Tool:** Do not rely on the amp to drain itself. Use a dedicated **Capacitor Discharge Tool** (a probe with a high-wattage resistor connected to ground) to safely bleed off voltage. You can buy one or easily build your own.
+> * **Discharge Tool:** Do not rely on the amp to drain itself. Use a dedicated **Capacitor Discharge Tool** to safely bleed off voltage.
+>     * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **20kΩ to 100kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge prevents sparking, unlike a screwdriver short.
 > * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
 
 > [!NOTE]
