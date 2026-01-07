@@ -31,7 +31,7 @@ The Fender Prosonic (and Mesa Rectifiers) allows you to switch between Solid Sta
 **Rule:** Always Calibrate and Bias in **Solid State Mode** (Position 3).
 
 ### Why?
-1.  [cite_start]**Manufacturer Spec:** The Prosonic Service Manual explicitly states: *"Bias set to ... Rectifier switch position 3."* [cite: 759]
+1.  **Manufacturer Spec:** The Prosonic Service Manual explicitly states: *"Bias set to ... Rectifier switch position 3."*
 2.  **Voltage Stability:** The SS Rectifier provides the stiffest, highest voltage (~465V). The Tube Rectifier sags significantly (~440V). Biasing at the highest voltage ensures safety across all modes.
 3.  **Bias Shift:** When you switch from SS (Class AB) to Tube (Class A/AB), the bias current naturally rises by approx 5-10%. You must set the SS mode conservatively to prevent the Tube mode from running dangerously hot.
 
@@ -71,4 +71,5 @@ Use these generic targets for Class AB fixed-bias amps if you are not using the 
 
 * **Cool (50-60%):** Longest tube life, maximum clean headroom, potentially sterile sound.
 * **Warm (60-70%):** The "Golden Zone." Good balance of warmth, harmonic content, and tube life.
+
 * **Hot (70%+):** Reduced tube life. High compression and earlier breakup. **Risk of Red Plating.**
