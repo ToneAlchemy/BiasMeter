@@ -413,7 +413,7 @@ The probe intercepts **Pin 8 (Cathode)** using a **1Ω Shunt Resistor**.
 
 #### 3. Screen Current Correction (Ig2)
 Because the Cathode Current reading includes both Plate Current *and* Screen Grid Current, the total dissipation can be slightly inflated.
-* **V11.4 Feature:** The firmware allows you to subtract an estimated Screen Current % (e.g., 5.5% for EL34s). This gives you the **True Plate Dissipation**, ensuring you don't bias the amp colder than necessary.
+* **V11.4 Feature:** The firmware allows you to subtract an estimated Screen Current % (e.g., 5.5% for 6L6GCs). This gives you the **True Plate Dissipation**, ensuring you don't bias the amp colder than necessary.
   
 ## Licensing
 
