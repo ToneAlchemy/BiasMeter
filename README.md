@@ -124,6 +124,28 @@ V11.4 introduces professional-grade data integrity and safety features not found
 ### ⚙️ On-Board Calibration
 * **Software Calibration:** Shunt resistance and Voltage Divider scaling can be adjusted via the screen menu and saved to EEPROM. You do not need to edit the source code to calibrate the unit.
 
+## 🧠 How It Works (Theory of Operation)
+
+For those interested in the engineering, here is how the Bias Meter safely measures high-voltage tube amplifiers.
+
+### 1. Measuring Plate Voltage (The Voltage Divider)
+The Arduino cannot measure 500V directly (it would fry instantly).
+* **The Circuit:** Inside the probe (or unit), a **Voltage Divider** network scales the high voltage down to a safe range (0-5V).
+* **The Math:** The device measures this low "safe" voltage and multiplies it by the **Voltage Scale Factor** (calibrated in software) to calculate the true High Voltage.
+    * *Example:* 450V from the amp is stepped down to 4.5V for the ADC. The screen displays "450V".
+
+### 2. Measuring Bias Current (The Shunt Resistor)
+To measure current, we use **Ohm's Law** (`V = I × R`).
+* **The Circuit:** The tube's cathode current flows through a precision **1Ω Shunt Resistor** to ground.
+* **The Measurement:** The current flowing through the resistor creates a tiny voltage drop across it (e.g., 35mA of current creates 35mV).
+* **The ADC:** The high-precision **ADS1115 ADC** measures this tiny voltage drop with extreme accuracy. The Arduino then converts that millivolt reading directly into milliamps (since 1mV = 1mA across a 1Ω resistor).
+
+### 3. Calculating Dissipation (The Wattage)
+Once the system knows the Voltage (V) and the Current (I), it calculates the Plate Dissipation in real-time.
+* **Formula:** `Watts = Plate Voltage × Plate Current`
+* **Screen Correction:** If enabled, the system first subtracts the estimated Screen Current from the total current to ensure the Wattage displayed is for the **Plate only**, providing the most accurate bias reading possible.
+
+
 ## Bill of Materials (BOM)
 
 | Quantity | Component                     | Description                                      |
