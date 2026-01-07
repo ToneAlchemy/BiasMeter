@@ -237,7 +237,7 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
     * **TFT Display:** Connect via SPI (Pins 8, 9, 10, 11, 13 defined in code).
     * **Buttons:** Connect to Digital Pins 5 (Left), 6 (Right), and 7 (Center/Select).
 3.  **Upload:**
-    * **Recommended:** Flash `BiasMeter_V11.4_PLATINUM.ino` to the Arduino Nano for the best balance of safety and stability.
+    * **Recommended:** Flash `BiasMeter_V11.4.ino` to the Arduino Nano for the best balance of safety and stability.
     * **Advanced:** Flash `BiasMeter_V11.4.1_WTD.ino` if you require Watchdog Timer functionality.
 
 ## Usage Guide
