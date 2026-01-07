@@ -22,7 +22,7 @@ This repository contains the complete source code and documentation for a profes
 >
 > * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
 > * **Discharge Tool:** Do not rely on the amp to drain itself. Use a dedicated **Capacitor Discharge Tool** to safely bleed off voltage.
->     * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **20kΩ to 100kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge prevents sparking, unlike a screwdriver short.
+>     * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **20kΩ to 100kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge **and** prevents sparking, unlike a screwdriver short.
 > * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
 
 > [!NOTE]
@@ -81,7 +81,7 @@ Some older Arduino Nano boards (and many low-cost clones) come with an outdated 
 **If v11.4.1 causes your Nano to loop endlessly, you have two options:**
 1.  **The Easy Fix:** Switch to **v11.4**. It is identical in features but has the WTD disabled to prevent this crash.
 2.  **The Advanced Fix:** You can burn the modern **"Optiboot"** bootloader onto your Nano. This fixes the bug and allows you to use the WTD safety features.
-    * *Note:* This requires an ISP programmer (or a second Arduino). **Proceed with caution: Interrupting the burning process can brick your device.**
+    * *Note:* This requires an ISP programmer (like a **USBasp** or using a second **Arduino as ISP**). **Proceed with caution: Interrupting the burning process can brick your device.**
     * *Guide 1:* [Installing Optiboot to Fix WDT Issue](https://bigdanzblog.wordpress.com/2014/10/23/installing-the-optiboot-loader-on-an-arudino-nano-to-fix-the-watch-dog-timer-wdt-issue/)
     * *Guide 2:* [AVR Watchdog Timer and Arduino Nano](https://dvdoudenprojects.blogspot.com/2015/08/avr-watchdog-timer-and-arduino-nano.html)
 
