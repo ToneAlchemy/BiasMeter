@@ -282,6 +282,10 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
 * **Navigation:** Use **Left/Right** to scroll through tube profiles.
 * **Selection:** Press **Center** to select a tube and begin measuring.
 
+### 📘 detailed Biasing Instructions
+We have created a dedicated guide for setting up your test bench and biasing specific amps (including the Fender Prosonic).
+* **[👉 Click here to read the BIASING GUIDE](BIASING_GUIDE.md)**
+
 ### Tube Manager (Updated in v11.4)
 * Select **"TUBE MANAGER"** from the main menu.
 * **Add/Edit/Delete:** You can create new tube profiles or edit existing ones (Name, Max Dissipation, Screen % Factor) and delete tube profiles.
