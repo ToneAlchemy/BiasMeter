@@ -380,18 +380,19 @@ This feature significantly improves accuracy compared to standard bias probes.
     * **Raw Mode:** Set to 0.00 to see the raw total current without subtraction.
  
 ## 🔌 DIY Probe Construction & Theory
-While we recommend the **Tube Depot Bias Scout Kit** for the easiest assembly, you can build your own probes using standard components. This is ideal for international builders or those who prefer custom setups.
+While we recommend the **Tube Depot Bias Scout Kit** for the easiest assembly, you can build your own probes using the Bias Scout Kit Instructions with standard components. This is ideal for international builders or those who prefer custom setups.
 
 ### 🛠️ DIY Parts List (Per Probe)
 To build one probe, you will need:
 * **1x Octal Tube Base:** (e.g., P-SP8-47X) - The male plug that goes into the amp.
 * **1x Octal PCB Socket:** (e.g., P-ST8-810-PCL) - The female socket the tube plugs into.
-* **1x 1Ω Resistor:** (2 Watt or greater, 1% - 5% Tolerance) - *Current Shunt*.
+* **1x 1Ω Resistor:** (2 Watt or greater, 1% Tolerance) - *Current Shunt*.
 * **1x 1MΩ Resistor:** (1/2 Watt or greater, 1% Tolerance) - *Voltage Divider High Side*.
 * **1x 100Ω Resistor:** (1/8 Watt or greater, 1% Tolerance) - *Voltage Divider Low Side*.
 * **3-Conductor Cabling:** Shielded audio cable or twisted wire.
 * **Banana Plugs / Jacks:** To connect to the main unit.
-
+* **Assembly Manual:** [Download PDF Instructions](https://s3.amazonaws.com/tubedepot-com-production/spree/attached_files/td_bias_scout_assy_manual_v3.2.pdf)
+  
 > [!NOTE]
 > The **Hoffman Amps Bias Checker** probe design will **NOT** work with this project. That probe only measures Cathode Current. This project requires probes that measure both Plate Voltage *and* Cathode Current.
 
