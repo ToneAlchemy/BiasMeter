@@ -1,4 +1,4 @@
-# Arduino (Nano) - Tube Amp Bias Meter (V11.4 Platinum)
+# Arduino Tube Amp Bias Meter (V11.4 Platinum)
 
 This repository contains the complete source code and documentation for a professional-grade, dual-probe vacuum tube bias meter. Designed for guitar amplifier technicians and hobbyists, this tool allows for the precise measurement and setting of bias for power tubes (EL34, 6L6GC, 6V6, etc.) using a high-resolution color interface.
 
@@ -139,6 +139,20 @@ V11.4 introduces professional-grade data integrity and safety features not found
 
 * **Download Link:** **[📂 Download BOM Files Here](HARDWARE%20-%20PCB%20KICAD/Bill%20of%20Materials%20(BOM)%20for%20the%20BIASMETER.txt)**
 
+### 🛠️ Building the Probes (Recommended Kit)
+We highly recommend the **Tube Depot Bias Scout Kit** for your hardware. It provides a professional, safe, and robust enclosure for the socket and resistor.
+
+* **Product Link:** [Tube Depot Bias Scout Kit](https://www.tubedepot.com/products/tubedepot-bias-scout-kit)
+* **Assembly Manual:** [Download PDF Instructions](https://s3.amazonaws.com/tubedepot-com-production/spree/attached_files/td_bias_scout_assy_manual_v3.2.pdf)
+
+**Assembly Notes for this Project:**
+1.  **The Resistor:** The kit includes a **1Ω 1W resistor**. This is perfect for this project and matches the default calibration (1.00Ω).
+2.  **Wiring Colors:** If you follow the standard instructions, the output plugs will match this project's wiring guide:
+    * **Red:** Plate Voltage (Connect to PCB `V_IN` via voltage divider).
+    * **Black:** Ground (Connect to PCB `GND`).
+    * **White:** Cathode Current (Connect to PCB `ADC_IN`).
+3.  **Connection:** You can either cut the banana plugs off and wire them directly to your PCB/Enclosure, or install female banana jacks on your Bias Meter enclosure for a detachable probe.
+
 ## 3D Printed Enclosure
 
 A custom enclosure has been designed to house the Arduino Nano, Display, and Buttons safely.
@@ -237,7 +251,7 @@ You can power the Arduino Nano via the `VIN` and `GND` pins using a 9V battery.
     * **TFT Display:** Connect via SPI (Pins 8, 9, 10, 11, 13 defined in code).
     * **Buttons:** Connect to Digital Pins 5 (Left), 6 (Right), and 7 (Center/Select).
 3.  **Upload:**
-    * **Recommended:** Flash `BiasMeter_V11.4.ino` to the Arduino Nano for the best balance of safety and stability.
+    * **Recommended:** Flash `BiasMeter_V11.4_PLATINUM.ino` to the Arduino Nano for the best balance of safety and stability.
     * **Advanced:** Flash `BiasMeter_V11.4.1_WTD.ino` if you require Watchdog Timer functionality.
 
 ## Usage Guide
