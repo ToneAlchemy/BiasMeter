@@ -1,4 +1,4 @@
-# Arduino Tube Amp Bias Meter (V11.4 Platinum)
+# Arduino (Nano) - Tube Amp - Bias Meter (V11.4 Platinum)
 
 This repository contains the complete source code and documentation for a professional-grade, dual-probe vacuum tube bias meter. Designed for guitar amplifier technicians and hobbyists, this tool allows for the precise measurement and setting of bias for power tubes (EL34, 6L6GC, 6V6, etc.) using a high-resolution color interface.
 
