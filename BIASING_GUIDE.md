@@ -1,5 +1,5 @@
 # 🎛️ Tube Amplifier Biasing Guide
-**Focus: Fender Prosonic & Fixed-Bias Class AB Amps**
+**Focus Bias Example: Fender Prosonic & Fixed-Bias Class AB Amps**
 
 This guide outlines the professional procedure for biasing high-gain tube amplifiers using the **Bias Meter**. While written with the **Fender Prosonic** in mind, these principles apply to most fixed-bias amplifiers (e.g., Marshall, Peavey, Soldano).
 
@@ -80,4 +80,5 @@ Use these generic targets for Class AB fixed-bias amps if you are not using the 
     * *Schematic Reference:* 050173
     * *Part Number:* 021-1007-000 (Combo) / 021-2007-000 (Head)
     * *Relevant Section:* Page 7, Schematic Diagram (Note 3: "Bias set to -46 VDC...")
+
 
