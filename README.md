@@ -65,6 +65,26 @@ This repository offers three distinct firmware versions. Choose the one that bes
 * **v11.4 (Standard):** **Use this if v11.4.1 fails.** Some cheaper Arduino Nano clones have incompatible bootloaders that crash when the Watchdog Timer is used. If v11.4.1 gets stuck in a reboot loop on your device, switch to this version. It has all the same features but without the auto-reboot safety.
 * **v11.3 (Legacy):** **Use only for backups.** This is an older stable release. It lacks the advanced EEPROM Checksum data protection and the expanded tube database of the v11.4 series.
 
+### 🛠️ Technical Deep Dive: The Watchdog Timer (WTD)
+
+**What is it?**
+The Watchdog Timer (WTD) is a hardware safety feature inside the Arduino's processor. It acts like a "Dead Man's Switch." The main code must constantly signal the timer (pet the dog) to let it know the system is running correctly.
+
+**Why is it important for Tube Amps?**
+Tube amplifiers are electrically noisy environments. High voltage spikes, flyback EMF, or loose tube socket connections can create strong Electromagnetic Interference (EMI). This interference can sometimes freeze the I2C bus (the connection to the ADC) or lock up the display driver.
+* **Without WTD (v11.4):** If the screen freezes due to noise, it stays frozen. You won't know if the reading is live or stuck.
+* **With WTD (v11.4.1):** If the system freezes for more than 4 seconds, the Watchdog detects the lockup and automatically reboots the device, restoring live readings immediately.
+
+### ⚠️ Troubleshooting: The "Boot Loop" Issue
+Some older Arduino Nano boards (and many low-cost clones) come with an outdated "Bootloader" that has a bug. This bug prevents the chip from recovering correctly after a Watchdog Reset, causing the device to get stuck in an infinite reboot loop (blinking LED).
+
+**If v11.4.1 causes your Nano to loop endlessly, you have two options:**
+1.  **The Easy Fix:** Switch to **v11.4**. It is identical in features but has the WTD disabled to prevent this crash.
+2.  **The Advanced Fix:** You can burn the modern **"Optiboot"** bootloader onto your Nano. This fixes the bug and allows you to use the WTD safety features.
+    * *Note:* This requires an ISP programmer (or a second Arduino). **Proceed with caution: Interrupting the burning process can brick your device.**
+    * *Guide 1:* [Installing Optiboot to Fix WDT Issue](https://bigdanzblog.wordpress.com/2014/10/23/installing-the-optiboot-loader-on-an-arudino-nano-to-fix-the-watch-dog-timer-wdt-issue/)
+    * *Guide 2:* [AVR Watchdog Timer and Arduino Nano](https://dvdoudenprojects.blogspot.com/2015/08/avr-watchdog-timer-and-arduino-nano.html)
+
 * **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
 
 ## 💻 Software & Development Environment
