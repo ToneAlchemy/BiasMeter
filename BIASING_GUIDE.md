@@ -53,7 +53,9 @@ Since the bias rises when switching to Tube Mode, you should **not** bias the SS
 1.  **Connect:** Install Bias Probes into the amp sockets and install tubes into the probes. Connect probes to the Bias Meter.
 2.  **Power Up:** Turn on the amp (in **SS Mode**) and let tubes warm up for at least 5 minutes.
 3.  **Calibrate:**
-    * Measure the Plate Voltage (Pin 3) with a trusted DMM.
+    * **Find a Safe Test Point:** Use the amp's schematic to find the safest B+ voltage point that powers the tubes (e.g., the Standby Switch or the main B+ fuse).
+    * **WARNING:** Avoid probing Pin 3 directly at the tube socket. A slip of the probe can short Pin 3 to Pin 2 (Heater) or Pin 4 (Screen), causing catastrophic damage. Always use a safer upstream point for measurement.
+    * Measure this voltage with a trusted DMM.
     * Enter **CAL SETUP** on the Bias Meter.
     * Adjust `Volt Scale` until the Bias Meter matches your DMM (e.g., 465V).
 4.  **Set Bias:**
@@ -62,7 +64,7 @@ Since the bias rises when switching to Tube Mode, you should **not** bias the SS
 5.  **Verify:**
     * Flip the switch to **Tube Rectifier Mode** (Position 2).
     * Observe the readings. The Watts should rise slightly (e.g., to 21W).
-    * As long as the hottest mode stays near or below **21W (70%)**, you are perfectly biased.
+    * As long as the hottest mode stays near or below **21W (70%)**, you are perfectly biased. 
 
 ---
 
@@ -80,5 +82,6 @@ Use these generic targets for Class AB fixed-bias amps if you are not using the 
     * *Schematic Reference:* 050173
     * *Part Number:* 021-1007-000 (Combo) / 021-2007-000 (Head)
     * *Relevant Section:* Page 7, Schematic Diagram (Note 3: "Bias set to -46 VDC...")
+
 
 
