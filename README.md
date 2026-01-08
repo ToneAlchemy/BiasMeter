@@ -2,6 +2,14 @@
 
 This repository contains the complete source code and documentation for a professional-grade, dual-probe vacuum tube bias meter. Designed for guitar amplifier technicians and hobbyists, this tool allows for the precise measurement and setting of bias for power tubes (EL34, 6L6GC, 6V6, etc.) using a high-resolution color interface.
 
+| **1. Splash Screen** | **2. Tube Select** | **3. Live Bias Mode** |
+| :---: | :---: | :---: |
+| <img src="./IMAGES/Splash_Screen.jpg" width="250" height="200"> | <img src="./IMAGES/Select_Tube-To-Bias.jpg" width="250" height="200"> | <img src="./IMAGES/Bias_Meter_Live.jpg"  width="250" height="200"> |
+| **4.  Calibration Voltage Scale** | **5. Calibration Shunt Resistor** | **6. Calibration Voltage Limiter** |
+| <img src="./IMAGES/Calibrate-Bias_Probe_A-Voltage_Scale.jpg" width="250" height="200"> | <img src="./IMAGES/Calibrate-Bias_Probe_A-Shunt-Resistor.jpg" width="250" height="200"> | <img src="./IMAGES/Calibrate-Voltage_Limiter.jpg" width="250" height="200"> |
+| **7. Tube Manager** | **8. Tube Manager - Editor** | **9. Tube Manager - Delete a Profile** |
+| <img src="./IMAGES/Tube_Manager-Main-Menu.jpg" width="250" height="200"> | <img src="./IMAGES/Tube_Manager-Edited_Selected_Profile.jpg" width="250" height="200"> | <img src="./IMAGES/Tube-Manager-Delete_Profile.jpg" width="250" height="200"> |
+
 **Current Recommended Version:** V11.4 Platinum (Stable Standard Release)
 
 > [!CAUTION]
@@ -209,6 +217,10 @@ For a cleaner build and enhanced reliability, a custom PCB has been designed to 
 ![PCB Schematic](HARDWARE%20-%20PCB%20KICAD/BiasMeter_Schematic.png)
 
 * **Download Link:** **[📂 Download PCB & KiCad Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter%20-%20KICAD)**
+  
+**📥 Get Kicad Software:**
+You can download the latest version of Kicad here:
+[**Download Official KICAD**](https://www.kicad.org)
 
 ## Wiring / Pinout Guide
 
