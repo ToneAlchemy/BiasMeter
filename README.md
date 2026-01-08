@@ -217,6 +217,10 @@ For a cleaner build and enhanced reliability, a custom PCB has been designed to 
 ![PCB Schematic](HARDWARE%20-%20PCB%20KICAD/BiasMeter_Schematic.png)
 
 * **Download Link:** **[📂 Download PCB & KiCad Files Here](HARDWARE%20-%20PCB%20KICAD/BiasMeter%20-%20KICAD)**
+  
+**📥 Get Kicad Software:**
+You can download the latest version of Kicad here:
+[**Download Official KICAD**](https://www.kicad.org)
 
 ## Wiring / Pinout Guide
 
