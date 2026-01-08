@@ -5,9 +5,9 @@ This repository contains the complete source code and documentation for a profes
 
 | **1. Splash Screen** | **2. Tube Select** | **3. Live Bias Mode** |
 | :---: | :---: | :---: |
-| <img src="./IMAGES/Splash_Screen.jpg" width="250"> | <img src="./IMAGES/Select_Tube-To-Bias.jpg" width="250"> | <img src="./IMAGES/Bias_Meter_Live.jpg"  width="250"> |
+| <img src="./IMAGES/Splash_Screen.jpg" width="250" height="200"> | <img src="./IMAGES/Select_Tube-To-Bias.jpg" width="250" height="200"> | <img src="./IMAGES/Bias_Meter_Live.jpg"  width="250" height="200"> |
 | **4.  Calibration Voltage Scale** | **5. Calibration Shunt Resistor** | **6. Tube Manager** |
-| <img src="./IMAGES/Calibrate-Bias_Probe_A-Voltage_Scale.jpg" width="250"> | <img src="./IMAGES/Calibrate-Bias_Probe_A-Shunt-Resistor.jpg" width="250"> | <img src="./IMAGES/Tube_Manager-Main-Menu.jpg" width="250"> |
+| <img src="./IMAGES/Calibrate-Bias_Probe_A-Voltage_Scale.jpg" width="250" height="200"> | <img src="./IMAGES/Calibrate-Bias_Probe_A-Shunt-Resistor.jpg" width="250" height="200"> | <img src="./IMAGES/Tube_Manager-Main-Menu.jpg" width="250" height="200"> |
 
 
 **Current Recommended Version:** V11.4 Platinum (Stable Standard Release)
