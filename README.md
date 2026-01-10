@@ -245,14 +245,13 @@ You can download the latest version of Kicad here:
 
 ### 🔌 Probe Wiring (Octal Sockets)
 If you are building your own probes, correct wiring is essential for the math to work.
-
 * **Pin 3 (Plate):** Connects to the Voltage Divider.
 * **Pin 8 (Cathode):** Connects to the Shunt Resistor (and Ground).
 * **Pin 1 & 8:** Often tied together in 6L6/EL34 amps.
 
-![Octal Tube Socket Pinout](https://upload.wikimedia.org/wikipedia/commons/a/a3/6V6_%2C_6L6_Tube_pin-out_.jpg)
+<img src="./IMAGES/Octal_Pinout.jpg" alt="Standard Octal 8-Pin Pinout Bottom View" width="300">
 
-*Figure: Standard Octal (8-Pin) Pinout (Bottom View).*
+*Figure: Standard Octal (8-Pin) Pinout (Bottom View).* 
 
 ## Powering the Device (Crucial Safety Info)
 
