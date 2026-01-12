@@ -10,8 +10,6 @@ This repository contains the complete source code and documentation for a profes
 | **7. Tube Manager** | **8. Tube Manager - Editor** | **9. Tube Manager - Delete a Profile** |
 | <img src="./IMAGES/Tube_Manager-Main-Menu.jpg" width="250" height="200"> | <img src="./IMAGES/Tube_Manager-Edited_Selected_Profile.jpg" width="250" height="200"> | <img src="./IMAGES/Tube-Manager-Delete_Profile.jpg" width="250" height="200"> |
 
-**Current Recommended Version:** V11.4 Platinum (Stable Standard Release)
-
 > [!CAUTION]
 > ## ⚠️ WARNING: HIGH VOLTAGE SAFETY
 >
