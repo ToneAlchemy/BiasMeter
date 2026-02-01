@@ -106,7 +106,11 @@ Some older Arduino Nano boards (and many low-cost clones) come with an outdated 
 ### 3. Adafruit Display Clones ST7735 1.8" TFT -  White Screen / Static / Wrong Colors?
 If your display lights up but shows static, garbage pixels, or wrong colors:
 * **The Cause:** You likely have a "Green Tab" or "Red Tab" clone display, which uses different pixel offsets than the standard "Black Tab" Adafruit screen.
-* **The Fix:** Open the firmware source code (`.ino` file) and look for the `tft.initR(INITR_BLACKTAB);` line. Try changing it to `tft.initR(INITR_GREENTAB);` or `tft.initR(INITR_REDTAB);` and re-upload.
+* **The Fix:** Open the firmware source code (`.ino` file) and find the line:
+  `tft.initR(INITR_18BLACKTAB);`
+  Change it to one of the following and re-upload until the screen looks correct:
+  * `tft.initR(INITR_18GREENTAB);`
+  * `tft.initR(INITR_18REDTAB);`
 
 * **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
 
