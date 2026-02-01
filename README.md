@@ -10,8 +10,6 @@ This repository contains the complete source code and documentation for a profes
 | **7. Tube Manager** | **8. Tube Manager - Editor** | **9. Tube Manager - Delete a Profile** |
 | <img src="./IMAGES/Tube_Manager-Main-Menu.jpg" width="250" height="200"> | <img src="./IMAGES/Tube_Manager-Edited_Selected_Profile.jpg" width="250" height="200"> | <img src="./IMAGES/Tube-Manager-Delete_Profile.jpg" width="250" height="200"> |
 
-**Current Recommended Version:** V11.4 Platinum (Stable Standard Release)
-
 > [!CAUTION]
 > ## ⚠️ WARNING: HIGH VOLTAGE SAFETY
 >
@@ -30,7 +28,7 @@ This repository contains the complete source code and documentation for a profes
 >
 > * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
 > * **Discharge Tool:** Do not rely on the amp to drain itself. Use a dedicated **Capacitor Discharge Tool** to safely bleed off voltage.
->     * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **20kΩ to 100kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge **and** prevents sparking, unlike a screwdriver short.
+>      * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **20kΩ to 100kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge **and** prevents sparking, unlike a screwdriver short.
 > * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
 
 > [!NOTE]
@@ -88,7 +86,16 @@ Tube amplifiers are electrically noisy environments. High voltage spikes, flybac
 * **Without WTD (v11.4):** If the screen freezes due to noise, it stays frozen. You won't know if the reading is live or stuck.
 * **With WTD (v11.4.1):** If the system freezes for more than 4 seconds, the Watchdog detects the lockup and automatically reboots the device, restoring live readings immediately.
 
-### ⚠️ Troubleshooting: The "Boot Loop" Issue
+## ⚠️ Troubleshooting
+
+### 1. Upload Failed? (stk500 Error)
+If you are unable to upload the firmware and see an error like `stk500_recv(): programmer is not responding`:
+* **The Cause:** You are likely using an older Arduino Nano (or a generic clone) that uses the legacy bootloader.
+* **The Fix:** In the Arduino IDE, go to **Tools > Processor** and change the setting from "ATmega328P" to **"ATmega328P (Old Bootloader)"**. Then try uploading again.
+* *Note:* Newer official Nanos (and USB-C versions) usually use the standard "ATmega328P" setting.
+
+### 2. The "Boot Loop" Issue
+
 Some older Arduino Nano boards (and many low-cost clones) come with an outdated "Bootloader" that has a bug. This bug prevents the chip from recovering correctly after a Watchdog Reset, causing the device to get stuck in an infinite reboot loop (blinking LED).
 
 **If v11.4.1 causes your Nano to loop endlessly, you have two options:**
@@ -97,6 +104,14 @@ Some older Arduino Nano boards (and many low-cost clones) come with an outdated 
     * *Note:* This requires an ISP programmer (like a **USBasp** or using a second **Arduino as ISP**). **Proceed with caution: Interrupting the burning process can brick your device.**
     * *Guide 1:* [Installing Optiboot to Fix WDT Issue](https://bigdanzblog.wordpress.com/2014/10/23/installing-the-optiboot-loader-on-an-arudino-nano-to-fix-the-watch-dog-timer-wdt-issue/)
     * *Guide 2:* [AVR Watchdog Timer and Arduino Nano](https://dvdoudenprojects.blogspot.com/2015/08/avr-watchdog-timer-and-arduino-nano.html)
+      
+### 3. Adafruit Display Clones ST7735 1.8" TFT -  White Screen / Static / Wrong Colors?
+If your display lights up but shows static, garbage pixels, or wrong colors:
+* **The Cause:** You likely have a "Green Tab" or "Red Tab" clone display. The plastic tab on the screen protector often indicates the internal driver version.
+* **The Fix:** Open the firmware source code (`.ino` file) and find the line: `tft.initR(INITR_18BLACKTAB);` 
+Change it to one of the following and re-upload until the screen looks correct:
+  * `tft.initR(INITR_18GREENTAB);`
+  * `tft.initR(INITR_18REDTAB);`
 
 * **[📂 Download Firmware Code Here](https://github.com/ToneAlchemy/BiasMeter/tree/main/BIASMETER-CODE)**
 
@@ -173,6 +188,33 @@ Once the system knows the Voltage (V) and the Current (I), it calculates the Pla
 
 * **Download Link:** **[📂 Download BOM Files Here](HARDWARE%20-%20PCB%20KICAD/Bill%20of%20Materials%20(BOM)%20for%20the%20BIASMETER.txt)**
 
+## 🛑 Hardware Compatibility & Critical Warnings
+
+Before sourcing parts, please review these critical hardware constraints to ensure your build works correctly.
+
+### 1. ADC Module: ADS1115 Only (No ADS1015)
+* **⚠️ CRITICAL:** You **MUST** use the **ADS1115 (16-Bit)** ADC module.
+* **Do NOT use the ADS1015:** This is a cheaper, 12-bit version that looks identical.
+* **The Issue:** The firmware uses a specific multiplier (`0.0078125 mV/bit`) calculated for 16-bit resolution. If you use an ADS1015, your bias readings will be incorrect by a factor of 16.
+
+### 2. Display: ST7735 TFT Only (No OLEDs)
+* **Required:** Adafruit **ST7735 1.8" Color TFT** (or compatible).
+* **Not Supported:** This firmware is **NOT** compatible with monochrome OLED displays (SSD1306 or SH1106) used in other versions.
+
+### 3. Arduino Nano Bootloader
+* **Recommendation:** We recommend buying an Arduino Nano with the modern **Optiboot** bootloader (often found on USB-C versions).
+* **The Issue:** Older Nanos and cheap clones often use the "Old Bootloader," which has a bug that causes a "Boot Loop" crash when the Watchdog Timer (WTD) is active. (See Troubleshooting section for fixes).
+
+### 4. Power Source (No Heater Power)
+* **Supported:** Isolated USB Wall Charger or 9V Battery.
+* **Not Supported:** Do **NOT** attempt to power this unit directly from the amplifier's 6.3V AC heater lines.
+* **The Risk:** This hardware revision does not include the necessary rectification circuitry. Connecting heater lines to the Arduino will destroy the unit.
+
+### 5. Isolation Transformers & USB
+* **Clarification:** Even if you plug the amplifier into an **Isolation Transformer**, it is **STILL UNSAFE** to connect the Bias Meter's USB port to a computer while probing.
+* **The Physics:** Most isolation transformers pass the **Earth Ground** pin straight through. This means the Ground Loop danger persists. **Never connect USB to a PC while the probes are in an amp. **If** you do so, you do it at your own risk!**
+
+
 ### 🛠️ Building the Probes (Recommended Kit)
 We highly recommend the **Tube Depot Bias Scout Kit** for your hardware. It provides a professional, safe, and robust enclosure for the socket and resistor.
 
@@ -245,14 +287,13 @@ You can download the latest version of Kicad here:
 
 ### 🔌 Probe Wiring (Octal Sockets)
 If you are building your own probes, correct wiring is essential for the math to work.
-
 * **Pin 3 (Plate):** Connects to the Voltage Divider.
 * **Pin 8 (Cathode):** Connects to the Shunt Resistor (and Ground).
 * **Pin 1 & 8:** Often tied together in 6L6/EL34 amps.
 
-![Octal Tube Socket Pinout](https://upload.wikimedia.org/wikipedia/commons/a/a3/6V6_%2C_6L6_Tube_pin-out_.jpg)
+<img src="./IMAGES/Octal_Pinout.jpg" alt="Standard Octal 8-Pin Pinout Bottom View" width="300">
 
-*Figure: Standard Octal (8-Pin) Pinout (Bottom View).*
+*Figure: Standard Octal (8-Pin) Pinout (Bottom View).* 
 
 ## Powering the Device (Crucial Safety Info)
 
@@ -407,6 +448,14 @@ To build one probe, you will need:
   
 > [!NOTE]
 > The **Hoffman Amps Bias Checker** probe design will **NOT** work with this project. That probe only measures Cathode Current. This project requires probes that measure both Plate Voltage *and* Cathode Current.
+
+### 🛡️ DIY Safety Upgrade (Input Protection)
+If you are building this on perfboard (instead of using the custom PCB), we strongly recommend adding input protection to save your Arduino in case of a catastrophic tube failure.
+
+* **The Mod:** Connect a **5.1V Zener Diode** (e.g., 1N4733A) between the **ADC Input (White Wire)** and **Ground**.
+* **Orientation:** The "Stripe" (Cathode) of the Zener diode must face the Signal wire; the other end goes to Ground.
+* **Function:** If a tube shorts and sends high voltage down the probe line, the Zener diode will "clamp" the voltage to 5.1V, sacrificing itself to save the ADS1115 and Arduino.
+*(Note: The custom PCB already includes these diodes).*
 
 ### ⚡ How It Works (The Theory)
 The probe acts as a "Pass-Through" adapter that sits between the amplifier socket and the power tube. It intercepts specific pins and sends the raw data to the **ADS1115 ADC**, which converts it into a high-precision digital signal for the Arduino.
