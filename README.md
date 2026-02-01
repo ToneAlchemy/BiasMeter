@@ -293,7 +293,9 @@ If you are building your own probes, correct wiring is essential for the math to
 
 <img src="./IMAGES/Octal_Pinout.jpg" alt="Standard Octal 8-Pin Pinout Bottom View" width="300">
 
-*Figure: Standard Octal (8-Pin) Pinout (Bottom View).* ## Powering the Device (Crucial Safety Info)
+*Figure: Standard Octal (8-Pin) Pinout (Bottom View).* 
+
+## Powering the Device (Crucial Safety Info)
 
 Correctly powering the Arduino Nano is critical to prevent damage to your computer, the bias meter, or the amplifier.
 
