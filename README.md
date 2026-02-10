@@ -28,7 +28,7 @@ This repository contains the complete source code and documentation for a profes
 >
 > * **The Golden Rule:** Always measure with a multimeter to confirm 0VDC before touching anything.
 > * **Discharge Tool:** Do not rely on the amp to drain itself. Use a dedicated **Capacitor Discharge Tool** to safely bleed off voltage.
->      * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **20kΩ to 100kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge **and** prevents sparking, unlike a screwdriver short.
+>      * *DIY Tip:* You can build one using a high-wattage resistor (e.g., **2kΩ to 5kΩ, 5 Watts**) wired to a probe and an alligator clip for ground. This slows the discharge **and** prevents sparking, unlike a screwdriver short.
 > * **One-Hand Rule:** When working on live amps, keep one hand in your pocket to prevent current from passing across your chest/heart.
 
 > [!NOTE]
