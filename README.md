@@ -10,6 +10,33 @@ This repository contains the complete source code and documentation for a profes
 | **7. Tube Manager** | **8. Tube Manager - Editor** | **9. Tube Manager - Delete a Profile** |
 | <img src="./IMAGES/Tube_Manager-Main-Menu.jpg" width="250" height="200"> | <img src="./IMAGES/Tube_Manager-Edited_Selected_Profile.jpg" width="250" height="200"> | <img src="./IMAGES/Tube-Manager-Delete_Profile.jpg" width="250" height="200"> |
 
+> [!IMPORTANT]
+> ## 🚀 NEW VERSION RELEASED: BiasPro
+> A completely rewritten, professional-grade version of this project is now available: **[BiasPro](https://github.com/ToneAlchemy/BiasPro)**. 
+> 
+> You can choose to build either version. **BiasPro is highly recommended for new builds**, but V11 remains available for legacy hardware compatibility and users who prefer the older feature set.
+> 
+> ### BiasPro (New) vs BiasMeter V11 (Legacy)
+> 
+> **BiasPro (The New Standard)**
+> * **Pros:** 
+>   * **100% Clean Rewrite:** Entirely re-architected in modern, memory-safe embedded C++.
+>   * **Hardware-Free Freeze Protection:** Uses advanced software-level `Wire` timeouts to survive severe EMP/EMI spikes without needing the Watchdog Timer (which crashes many Nano clones).
+>   * **Improved Diagnostics:** Features a new "RAW SENSORS" mode that displays direct ADC telemetry and probe connection status.
+>   * **Advanced Safety:** Strict hysteresis on over-voltage lockouts and bulletproof input debouncing to prevent interface jumps.
+> * **Cons:** 
+>   * Extremely tight code (uses 97% of standard Arduino Nano flash memory); requires an Optiboot-upgraded Nano if you wish to add custom code.
+> 
+> **BiasMeter V11 (This Repository)**
+> * **Pros:** 
+>   * Slightly smaller memory footprint, leaving room for DIY code additions on standard older Nanos.
+>   * Includes a hardware Watchdog Timer (WDT) specific edition (`v11.4.1`) for users who specifically want hard-reboots on EMI lockups.
+> * **Cons:** 
+>   * Codebase is older and relies on generic third-party ADC libraries that can freeze during severe EMI events without the WDT.
+>   * The WDT version will crash in an infinite boot-loop on many cheap Nano clones due to a silicon bug.
+> 
+> 👉 **[Get BiasPro Here: github.com/ToneAlchemy/BiasPro](https://github.com/ToneAlchemy/BiasPro)**
+
 > [!CAUTION]
 > ## ⚠️ WARNING: HIGH VOLTAGE SAFETY
 >
