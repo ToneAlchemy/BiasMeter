@@ -505,11 +505,10 @@ Because the Cathode Current reading includes both Plate Current *and* Screen Gri
   
 ## Licensing
 
-This project, **"Bias Meter"** by Charlie Isaac (ToneAlchemy.com), is released under the **GNU General Public License v3.0 (GPLv3)**.
+This project, **"Bias Meter"** by Charlie Isaac (ToneAlchemy.com), is released under the **MIT**.
 
 ### What this means:
 * **Open Source:** You are free to use, modify, and distribute this software.
-* **ShareAlike:** If you modify this project and distribute it (or a product based on it), you **MUST** release your modifications under the same GPLv3 license. You cannot close-source this project.
 * **No Warranty:** This software is provided "as is" without warranty of any kind.
 
 ### Attribution & Legacy
