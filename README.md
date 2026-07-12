@@ -13,6 +13,7 @@ This repository contains the complete source code and documentation for a profes
 > [!IMPORTANT]
 > ## 🚀 NEW VERSION RELEASED: BiasPro
 > A completely rewritten, professional-grade version of this project is now available: **[BiasPro](https://github.com/ToneAlchemy/BiasPro)**. 
+> https://github.com/ToneAlchemy/BiasPro
 > 
 > You can choose to build either version. **BiasPro is highly recommended for new builds**, but V11 remains available for legacy hardware compatibility and users who prefer the older feature set.
 > 
